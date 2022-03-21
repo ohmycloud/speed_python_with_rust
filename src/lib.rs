@@ -21,7 +21,7 @@ fn test_numpy<'a>(result_dict: &'a PyDict) -> PyResult<&'a PyDict> {
     let locals = PyDict::new(py);
     locals.set_item("np", py.import("numpy").unwrap());
 
-    let code = "np.array[[3,2], [1, 4]]";
+    let code = "np.array([[3, 2], [1, 4]])";
     let weights_matrix = py.eval(code, None, Some(&locals)).unwrap();
     locals.set_item("weights_matrix", weights_matrix);
 
