@@ -45,7 +45,7 @@ pub fn calculate_times<'a>(result_dict: &'a PyDict, distance: i32, traffic_grade
 }
 
 #[pyfunction]
-pub fn caculate_parameters<'a>(result_dict: &'a PyDict, car_time: i32, truck_time: i32) -> PyResult<&'a PyDict> {
+pub fn calculate_parameters<'a>(result_dict: &'a PyDict, car_time: i32, truck_time: i32) -> PyResult<&'a PyDict> {
     let gil = Python::acquire_gil();
     let py = gil.python();
     let locals = PyDict::new(py);
